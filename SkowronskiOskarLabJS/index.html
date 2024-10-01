@@ -112,6 +112,28 @@
 	<section id="main-page">
 		<div class="container">
 
+			
+			<button id="showMyData">Pokaż moje dane</button>
+
+			<script>
+				const mainSection = document.getElementById("main-page");
+				const paragraph1 = document.createElement("p");
+				paragraph1.id = "imie-paragraph";
+				const paragraph2 = document.createElement("p");
+				paragraph2.id = "nazwisko-paragraph";
+				paragraph1.textContent = "Oskar";
+       			paragraph2.textContent = "Skowronski";
+				mainSection.appendChild(paragraph1);
+				mainSection.appendChild(paragraph2);
+				function showData() {
+					const imie = document.getElementById("imie-paragraph").textContent;
+					const nazwisko = document.getElementById("nazwisko-paragraph").textContent;
+
+					alert(`Moje dane: ${imie} ${nazwisko}`);
+				}
+				document.getElementById("showMyData").onclick = showData;
+			</script>
+
 			<div class="jumbotron">
 				<h1>Języki wysokiego poziomu <br> w aplikacjach internetowych</h1>
 				<div class="row">
@@ -154,6 +176,24 @@
 						<p>999</p>
 					</div>
 				</div>
+				<div class="row">
+					<script>
+						let i = 0;
+						let halfLength = tablica.length/2;
+						while(i < halfLength){
+							document.write(tablica[i] + " ");
+							i++;
+						}
+					</script>
+					<script>
+						for(i=0; i< halfLength; i++){
+							document.write(tablica[i] + " ");
+						}
+					</script>
+				</div>
+				<div class="row">
+					
+				</div>
 
 			</div>
 
@@ -178,7 +218,7 @@
 				</script>
 				
 				<script>
-					const formsCounter = document.forms.length;
+					const formsCounter = document.scripts.length;
 					document.write('<p>Ilosc elementow: <strong>');
 					document.write(formsCounter + '</strong></p>');
 				</script>
@@ -192,8 +232,23 @@
 		<div class="container">
 			<div class="jumbotron">
 				<h1>Projekt 2</h1>
+
+				<div class="quiz-container">
+					<h1>Quiz</h1>
+					<div id="question" class="question"></div>
+					<input type="number" id="answer" placeholder="Twoja odpowiedź" />
+					<button onclick="submitAnswer()">Sprawdź odpowiedź</button>
+				</div>
 				
-				<p>Miejsce na projekt laboratoryjny</p>
+				<script>
+					let answer;
+					var questions = [
+						['Ile księżyców ma Ziemia?', 1],
+						['Ile księżyców ma Saturn?', 62],
+						['Ile księżyców ma Wenus?', 0]
+					];
+
+				</script>
 				
 			</div>
 		</div>
