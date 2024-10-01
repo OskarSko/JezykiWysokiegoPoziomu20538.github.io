@@ -1,4 +1,4 @@
-# JezykiWysokiegoPoziomu_20538
+# Jezyki wysokiego poziomu w aplikacjach internetowych
 
 Oskar Skowroński <br />
 20538 <br />
