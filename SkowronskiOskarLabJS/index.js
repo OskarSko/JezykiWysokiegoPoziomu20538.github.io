@@ -1,18 +1,7 @@
-const http = require('http');
-const path = require("path");
-const util = require("util");
-const v8 = require("v8");
+import camelCase from 'camelcase';
 
-const hostname = '127.0.0.1';
-const port = 8888;
-const server = http.createServer(function(request, response) {
-	response.statusCode = 200;
-	response.setHeader('Content-Type', 'text/plain');
-	response.end('Witaj, z serwera node.js !\n');
-});
-server.listen(port, hostname, () => {
-	util.log(v8.getHeapStatistics());
-	console.log(path.basename(__filename));
-	util.log(path.join(__dirname, 'uploads', 'images'));
-	console.log(`Server running at http://${hostname}:${port}/`);
-});
+console.log(camelCase('nazwa-z-kreska'));
+console.log(camelCase('nazwa_z_podkresleniem'));
+console.log(camelCase('nazwa.z.kropka'));
+console.log(camelCase('nazwa z spacja'));
+console.log('Moduł zamienia -/_/./ / na camelCase');
