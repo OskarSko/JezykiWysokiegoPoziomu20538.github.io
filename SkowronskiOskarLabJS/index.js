@@ -1,10 +1,18 @@
-const fs = require("fs");
-//const data = fs.readFileSync('package.json');
+const http = require('http');
+const path = require("path");
+const util = require("util");
+const v8 = require("v8");
 
-console.log("Początek skryptu.");
-fs.readFile('package.json', function (err, data) {
-	if (err) return console.error(err);
-	console.log(data.toString());
+const hostname = '127.0.0.1';
+const port = 8888;
+const server = http.createServer(function(request, response) {
+	response.statusCode = 200;
+	response.setHeader('Content-Type', 'text/plain');
+	response.end('Witaj, z serwera node.js !\n');
 });
-//console.log(data.toString());
-console.log("Koniec skryptu.");
+server.listen(port, hostname, () => {
+	util.log(v8.getHeapStatistics());
+	console.log(path.basename(__filename));
+	util.log(path.join(__dirname, 'uploads', 'images'));
+	console.log(`Server running at http://${hostname}:${port}/`);
+});
