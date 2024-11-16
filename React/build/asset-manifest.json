@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/JezykiWysokiegoPoziomu20538.github.io/static/css/main.5786cc1f.css",
+    "main.js": "/JezykiWysokiegoPoziomu20538.github.io/static/js/main.713c1d2b.js",
+    "static/js/453.faafeb89.chunk.js": "/JezykiWysokiegoPoziomu20538.github.io/static/js/453.faafeb89.chunk.js",
+    "index.html": "/JezykiWysokiegoPoziomu20538.github.io/index.html",
+    "main.5786cc1f.css.map": "/JezykiWysokiegoPoziomu20538.github.io/static/css/main.5786cc1f.css.map",
+    "main.713c1d2b.js.map": "/JezykiWysokiegoPoziomu20538.github.io/static/js/main.713c1d2b.js.map",
+    "453.faafeb89.chunk.js.map": "/JezykiWysokiegoPoziomu20538.github.io/static/js/453.faafeb89.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5786cc1f.css",
+    "static/js/main.713c1d2b.js"
+  ]
+}
