@@ -1,53 +1,54 @@
-import React from 'react';
-import UserCard from './UserCard';
-import State from './State';
-import Reducer from './Reducer'; 
-import Effect from './Effect';
-import Context from './Context';
-import Ref from './Ref';
-import UserProfile from './Context';
 import './App.css';
+import Counter from './Counter.js';
+import BrokenCounter from './BrokenCounter';
 
-function App() {
-  return (
-    <div>
-      <h1>React Hooks</h1>
+import HandleClick from './HandleClick';
+import HandleMouseOver from './HandleMouseOver';
+import ShowImage from './ShowImage';
+import LoadDataFromJson from './loadDataFromJson.js';
+import UploadFile from './uploadFile.js';
+import ChangeStyle from './ChangeStyle';
 
-      <section>
-        <h2>Lista Użytkowników - Zad 1</h2>
-        <UserCard name="Jan" surname="Kowalski" email="jan.kowalski@example.com" />
-        <UserCard name="Anna" surname="Nowak" email="anna.nowak@example.com" />
-        <UserCard name="Piotr" surname="Wiśniewski" email="piotr.wisniewski@example.com" />
-      </section>
+const App = () => {
+    return (
+        <div style={{ textAlign: 'center', padding: '20px' }}>
+            <h1>Lab 8 - React</h1>
 
-      <section>
-        <h2>useState - zad 2</h2>
-        <State />
-      </section>
+            <div style={{ marginBottom: '50px' }}>
+                <h2>Prawidłowy licznik</h2>
+                <Counter />
+            </div>
+            <div style={{ marginBottom: '50px' }}>
+                <h2>Nieprawidłowy licznik</h2>
+                <BrokenCounter />
+            </div>
 
-      <section>
-        <h2>useReducer - zad 2</h2>
-        <Reducer />
-      </section>
-
-      <section>
-        <h2>useEffect - zad 2</h2>
-        <Effect />
-      </section>
-
-      <section>
-        <h2>useContext - zad 2</h2>
-        <Context>
-          <UserProfile />
-        </Context>
-      </section>
-
-      <section>
-        <h2>useRef - zad 2</h2>
-        <Ref />
-      </section>
-    </div>
-  );
-}
+            <div style={{ marginBottom: '50px' }}>
+                <h2>Obsługa kliknięcia</h2>
+                <HandleClick />
+            </div>
+            <div style={{ marginBottom: '50px' }}>
+                <h2>Obsługa najazdu myszką</h2>
+                <HandleMouseOver />
+            </div>
+            <div style={{ marginBottom: '50px' }}>
+                <h2>Pokaż obraz</h2>
+                <ShowImage />
+            </div>
+            <div style={{ marginBottom: '50px' }}>
+                <h2>Załaduj dane z JSON</h2>
+                <LoadDataFromJson />
+            </div>
+            <div style={{ marginBottom: '50px' }}>
+                <h2>Prześlij plik</h2>
+                <UploadFile />
+            </div>
+            <div style={{ marginBottom: '50px' }}>
+                <h2>Zmień styl</h2>
+                <ChangeStyle />
+            </div>
+        </div>
+    );
+};
 
 export default App;
