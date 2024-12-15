@@ -6,6 +6,7 @@ const nextConfig = {
   },
   assetPrefix: isProd ? '/JezykiWysokiegoPoziomu20538.github.io/' : '',
   basePath: isProd ? '/JezykiWysokiegoPoziomu20538.github.io' : '',
+  assetPrefix: '/JezykiWysokiegoPoziomu20538.github.io',
   output: 'export'
 };
 
