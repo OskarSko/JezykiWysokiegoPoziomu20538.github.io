@@ -1,62 +1,40 @@
 import Image from 'next/image';
 
-export default function CommunityPage() {
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-  
-  const posts = [
-    {
-      id: 1,
-      title: 'Favorite Meals Discussion',
-      image: `${basePath}/images/burger.jpg`,
-      description: 'Share your favorite burger recipes and tips!',
-    },
-    {
-      id: 2,
-      title: 'Healthy Eating Tips',
-      image: `${basePath}/images/tomato-salad.jpg`,
-      description: 'Let’s talk about fresh and healthy tomato salads.',
-    },
-    {
-      id: 3,
-      title: 'The Best Pizzas',
-      image: `${basePath}/images/pizza.jpg`,
-      description: 'Post your favorite pizza toppings and recipes!',
-    },
-  ];
+import mealIcon from '@/assets/icons/meal.png';
+import communityIcon from '@/assets/icons/community.png';
+import eventsIcon from '@/assets/icons/events.png';
+import classes from './page.module.css';
 
+export default function CommunityPage() {
   return (
-    <div style={{ padding: '20px' }}>
-      <h1 style={{ textAlign: 'center', marginBottom: '20px' }}>Community Page</h1>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-        {posts.map((post) => (
-          <div
-            key={post.id}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '20px',
-              border: '1px solid #ddd',
-              borderRadius: '8px',
-              padding: '10px',
-              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-            }}
-          >
+    <>
+      <header className={classes.header}>
+        <h1>
+          One shared passion: <span className={classes.highlight}>Food</span>
+        </h1>
+        <p>Join our community and share your favorite recipes!</p>
+      </header>
+      <main className={classes.main}>
+        <h2>Community Perks</h2>
+
+        <ul className={classes.perks}>
+          <li>
+            <Image src={mealIcon} alt="A delicious meal" />
+            <p>Share & discover recipes</p>
+          </li>
+          <li>
+            <Image src={communityIcon} alt="A crowd of people, cooking" />
+            <p>Find new friends & like-minded people</p>
+          </li>
+          <li>
             <Image
-              src={post.image}
-              alt={post.title}
-              width={120}
-              height={80}
-              style={{ borderRadius: '8px' }}
+              src={eventsIcon}
+              alt="A crowd of people at a cooking event"
             />
-            <div>
-              <h2 style={{ margin: '0', fontSize: '1.2rem' }}>{post.title}</h2>
-              <p style={{ margin: '0.5rem 0 0', color: '#555' }}>
-                {post.description}
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
+            <p>Participate in exclusive events</p>
+          </li>
+        </ul>
+      </main>
+    </>
   );
 }

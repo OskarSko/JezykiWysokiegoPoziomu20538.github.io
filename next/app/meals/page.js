@@ -1,35 +1,54 @@
-import Image from 'next/image';
+import MealsGrid from '../../components/meals/MealsGrid';
+import styles from '../../styles/page.module.css';
 
 export default function MealsPage() {
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-  
+  // Przykładowe dane, które mogą pochodzić z bazy danych lub API
   const meals = [
-    { name: 'Burger', src: `${basePath}/images/burger.jpg` },
-    { name: 'Curry', src: `${basePath}/images/curry.jpg` },
-    { name: 'Dumplings', src: `${basePath}/images/dumplings.jpg` },
-    { name: 'Mac and Cheese', src: `${basePath}/images/macncheese.jpg` },
-    { name: 'Pizza', src: `${basePath}/images/pizza.jpg` },
-    { name: 'Schnitzel', src: `${basePath}/images/schnitzel.jpg` },
-    { name: 'Tomato Salad', src: `${basePath}/images/tomato-salad.jpg` },
+    {
+      id: 1,
+      title: 'Curry',
+      slug: 'Curry',
+      image: '/images/curry.jpg',
+      summary: 'Curry.',
+      creator: 'Chef Mario',
+    },
+    {
+      id: 2,
+      title: 'Schnitzel',
+      slug: 'Schnitzel',
+      image: '/images/schnitzel.jpg',
+      summary: 'A spicy and flavorful chicken curry dish.',
+      creator: 'Chef Aditi',
+    },
+    {
+      id: 3,
+      title: 'Tomato Salad',
+      slug: 'Tomato salad',
+      image: '/images/tomato-salad.jpg',
+      summary: 'A fresh and healthy salad for vegetarians.',
+      creator: 'Chef Emily',
+    },
   ];
 
   return (
     <div>
-      <h1>Meals Page</h1>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
-        {meals.map((meal, index) => (
-          <div key={index} style={{ textAlign: 'center' }}>
-            <Image
-              src={meal.src}
-              alt={meal.name}
-              width={200}
-              height={150}
-              style={{ borderRadius: '8px' }}
-            />
-            <p>{meal.name}</p>
-          </div>
-        ))}
-      </div>
+      <header className={styles.header}>
+        <h1>
+          Delicious meals, created{' '}
+          <span className={styles.highlight}>by you</span>
+        </h1>
+        <p>
+          Choose your favorite recipe and cook it yourself. It is easy and fun!
+        </p>
+        <div className={styles.cta}>
+          <a href="/meals/share" className={styles.button}>
+            Share Your Favorite Recipe
+          </a>
+        </div>
+      </header>
+      <main className={styles.main}>
+        <MealsGrid meals={meals} />
+      </main>
     </div>
   );
 }
