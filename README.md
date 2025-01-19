@@ -4,6 +4,8 @@ Oskar Skowroński <br />
 20538 <br />
 20538@student.ans-elblag.pl <br />
 
-strona Lab 11: https://oskarsko.github.io/JezykiWysokiegoPoziomu20538.github.io/
-https://jezyki-wysokiego-poziomu20538-github-io.vercel.app/
-Strona po zahostowaniu nie wyświetla się tak jak na localhoscie. :(
+strona Lab 12: ezyki-wysokiego-poziomu20538.vercel.app
+
+Pliki do zadań 11-12 znajdują się w repo
+
+
